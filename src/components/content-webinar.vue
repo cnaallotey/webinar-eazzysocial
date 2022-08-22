@@ -1,3 +1,11 @@
+<script setup>
+import moment from "moment";
+const props = defineProps({
+  webinar: Object,
+  points: Array,
+});
+</script>
+
 <template>
   <div>
     <div class="w-full">
@@ -9,18 +17,15 @@
             >
               Details
             </h2>
-            <p class="text-xl font-semibold text-gray-900">August 24th to October 30th</p>
+            <p class="text-xl font-semibold text-gray-900">
+              {{
+                moment(webinar["date-and-timeof-webinar"]).format(
+                  "MMMM Do YYYY, h:mm:ss a"
+                )
+              }}
+            </p>
             <p class="text-base font-normal text-gray-700 leading-6 mt-5 max-w-2xl">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni quaerat
-              quibusdam odio sed repellendus quod incidunt laborum, sint vero magnam
-              molestias deserunt aspernatur alias dolor accusamus rerum mollitia tenetur.
-              Ipsa! Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-              asperiores, dolor itaque, provident beatae magni culpa aliquam quia vitae,
-              molestias eos sequi natus quasi unde reiciendis necessitat ibus. Quisquam,
-              mollitia modi. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Eaque, illo! Sed maiores, porro sapiente dolore recusandae commodi quaerat
-              soluta ad enim pariatur inventore architecto impedit alias. Voluptatum
-              tenetur aperiam saepe.
+              {{ webinar["details-2"] }}
             </p>
             <div class="mt-10">
               <h2
@@ -28,7 +33,11 @@
               >
                 Things you will learn
               </h2>
-              <div class="mt-5 flex items-center space-x-2">
+              <div
+                class="mt-5 flex items-center space-x-2"
+                v-for="point in props.points"
+                :key="point.id"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-8 w-8 text-green-500"
@@ -41,12 +50,12 @@
                     clip-rule="evenodd"
                   />
                 </svg>
-                <p class="text-xl font-semibold text-gray-900">How to tie a Knot</p>
+                <p class="text-xl font-semibold text-gray-900">{{ point.name }}</p>
               </div>
             </div>
           </div>
           <div
-            class="w-fill col-span-3 lg:col-span-1 border border-gray-200 order-1 lg:order-2"
+            class="w-fill col-span-3 lg:col-span-1 border border-gray-200 order-2 lg:order-2"
           >
             <div class="w-full p-4 bg-blue-900">
               <p class="text-xl font-bold text-white leading-6 text-center">
@@ -65,7 +74,12 @@
                   type="text"
                   class="w-full border border-gray-300 rounded p-2 text-sm font-normal mt-1 mb-4"
                 />
-                <label for="company">Company</label
+                <label for="email">Email</label
+                ><input
+                  type="email"
+                  class="w-full border border-gray-300 rounded p-2 text-sm font-normal mt-1 mb-4"
+                />
+                <label for="company">Profession</label
                 ><input
                   type="text"
                   class="w-full border border-gray-300 rounded p-2 text-sm font-normal mt-1 mb-4"
