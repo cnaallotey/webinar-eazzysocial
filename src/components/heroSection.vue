@@ -75,7 +75,7 @@ const props = defineProps({
               <div class="relative" style="z-index: 0">
                 <img
                   class="h-128 w-full max-w-2xl object-cover"
-                  :src="webinar['banner-image'].url"
+                  src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8aW50ZXJ2aWV3fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=100"
                   alt=""
                 />
                 <!-- <img
