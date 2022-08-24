@@ -10,10 +10,10 @@ const props = defineProps({
 <template>
   <div>
     <section class="skewed-bottom-right">
-      <div class="bg-blue-600 pt-12 lg:pt-20 pb-20 radius-for-skewed">
+      <div class="bg-blue-600 radius-for-skewed">
         <div class="container max-w-screen-xl mx-auto px-4">
-          <div class="flex flex-wrap -mx-4">
-            <div class="w-full lg:w-1/2 px-4 mb-12 md:mb-20 lg:mb-0 flex items-center">
+          <div class="grid grid-cols-1 lg:grid-cols-2 -mx-4">
+            <div class="w-full px-4 py-10 lg:py-20 flex items-center">
               <div class="w-full text-center lg:text-left">
                 <p class="text-lg uppercase text-white font-normal tracking-wide mb-5">
                   WEBINAR
@@ -42,10 +42,12 @@ const props = defineProps({
                       }}
                     </p>
                   </div>
-                  <p class="text-base font-semibold text-white leading-5">Speakers</p>
+                  <p class="text-base font-semibold text-white leading-5">
+                    Speaker{{ speakers.length > 0 ? "s" : "" }}
+                  </p>
                   <div class="w-full grid grid-cols-1 md:grid-cols-2 mt-2 gap-y-3">
                     <div
-                      class="flex flex-col items-center md:items-start space-y-3 w-full"
+                      class="flex flex-col items-center lg:items-start space-y-3 w-full"
                       v-for="speaker in speakers"
                       :key="speaker.id"
                     >
@@ -63,7 +65,7 @@ const props = defineProps({
                           {{ speaker.name }}
                         </p>
                         <p class="text-lg font-normal text-gray-800 italic">
-                          {{ speaker["speaker-info"] }}
+                          {{ speaker["role"] }}
                         </p>
                       </div>
                     </div>
@@ -71,11 +73,11 @@ const props = defineProps({
                 </div>
               </div>
             </div>
-            <div class="w-full lg:w-1/2 px-4 flex items-center justify-center">
-              <div class="relative" style="z-index: 0">
+            <div class="w-full h-full overflow-hidden">
+              <div class="relative h-full w-full" style="z-index: 0">
                 <img
-                  class="h-128 w-full max-w-2xl object-cover"
-                  src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8aW50ZXJ2aWV3fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=100"
+                  class="h-full w-full object-cover"
+                  :src="webinar['banner-image']['url']"
                   alt=""
                 />
                 <!-- <img

@@ -8,25 +8,31 @@
             <ul
               class="max-w-2xl cursor-pointer lg:space-x-10 space-y-5 lg:space-y-0 text-sm font-medium flex flex-col lg:flex-row items-center justify-between text-slate-700"
             >
-              <router-link
-                to="/expressSocial"
+              <a
+                href="https://eazzysocial.com/expressSocial"
                 class="hover:text-blue-500 hover:font-semibold"
               >
-                Express Social</router-link
+                Express Social</a
               >
-              <router-link
-                to="/campusclub"
+              <a
+                href="https://eazzysocial.com/campusclub"
                 class="hover:text-blue-500 hover:font-semibold"
-                >Campus Club</router-link
+                >Campus Club</a
               >
-              <router-link to="/courses" class="hover:text-blue-500 hover:font-semibold"
-                >Courses</router-link
+              <a
+                href="https://eazzysocial.com/courses"
+                class="hover:text-blue-500 hover:font-semibold"
+                >Courses</a
               >
-              <router-link to="/about" class="hover:text-blue-500 hover:font-semibold"
-                >About</router-link
+              <a
+                href="https://eazzysocial.com//about"
+                class="hover:text-blue-500 hover:font-semibold"
+                >About</a
               >
-              <router-link to="/contact" class="hover:text-blue-500 hover:font-semibold"
-                >Contact</router-link
+              <a
+                href="https://eazzysocial.com//contact"
+                class="hover:text-blue-500 hover:font-semibold"
+                >Contact</a
               >
             </ul>
             <div class="flex space-x-8 items-center">

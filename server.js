@@ -8,7 +8,21 @@ const path = require('path')
 const app = express()
 
 //using cors
-app.use(cors())
+var allowedOrigins = ['http://localhost:3003','http://eazzysocial.blog', 'https://eazzysocial.blog', 'http://blog.eazzysocial.com', 'http://www.eazzysocial.com', 'http://eazzysocial.com', 'http://www.eazzysocial.blog', 'http://webinar.eazzysocial.com', 'https://webinar.eazzysocial.com' ];
+
+app.use(cors(
+
+  {
+    origin: function(origin, callback){    // allow requests with no origin 
+      // (like mobile apps or curl requests)
+      if(!origin) return callback(null, true);    if(allowedOrigins.indexOf(origin) === -1){
+        var msg = 'The CORS policy for this site does not ' +
+                  'allow access from the specified Origin.';
+        return callback(new Error(msg), false);
+      }    return callback(null, true);
+    }
+  }
+))
 
 
 //configuring body parser middle ware
@@ -19,7 +33,7 @@ const request = require('request');
 
 var webinar=[];
 
-const token = "91a8c488313407496f7ff17ff4d1b482596471843b7d95807a20aa7d5715cc42";
+const token = "07c7111e3a86e0a7bf9cee656bc07ab76a6f7f593623f5f1ad1a5d599222f3dc";
 
 const options = {
   method: 'GET',
