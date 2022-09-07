@@ -10,8 +10,19 @@
     <Speakers :speakers="webinar.speakers" />
     <Foote></Foote>
   </div>
-  <div v-else class="w-screen h-screen flex items-center justify-center">
-    <img src="../assets/lgofull.png" class="h-12 animate-bounce" alt="" />
+  <div v-else class="w-screen h-screen flex flex-col items-center justify-center">
+    <lottie-player
+      src="https://assets8.lottiefiles.com/packages/lf20_dkz94xcg.json"
+      background="transparent"
+      speed="1"
+      class="h-32 w-auto"
+      loop
+      autoplay
+    ></lottie-player>
+
+    <p class="text-sm font-semibold text-gray-700 leading-6 text-center mt-2">
+      loading Webinar ...
+    </p>
   </div>
 </template>
 
@@ -39,7 +50,7 @@ onMounted(() => {
     .then((res) => {
       webinar.details = res.data.items[0];
       loaded.webinar = true;
-      console.log(webinar.details);
+      //console.log(webinar.details);
     });
 
   axios
@@ -51,7 +62,7 @@ onMounted(() => {
     .then((res) => {
       webinar.speakers = res.data.items;
       loaded.details = true;
-      console.log(webinar.speakers);
+      //console.log(webinar.speakers);
     });
   axios
     .get("https://resources.eazzysocial.blog/points", {
@@ -62,7 +73,7 @@ onMounted(() => {
     .then((res) => {
       webinar.points = res.data.items;
       loaded.points = true;
-      console.log(webinar.points);
+      //console.log(webinar.points);
     });
 });
 </script>

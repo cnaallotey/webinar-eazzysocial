@@ -42,8 +42,13 @@ const props = defineProps({
                       }}
                     </p>
                   </div>
-                  <p class="text-base font-semibold text-white leading-5">
-                    Speaker{{ speakers.length > 0 ? "s" : "" }}
+                  <p
+                    class="py-1 my-2 px-3 text-lg font-semibold w-fit bg-rose-600 text-white mx-auto lg:mx-0"
+                  >
+                    {{ webinar.price }}
+                  </p>
+                  <p class="text-base font-semibold text-white leading-5 mt-3">
+                    Speaker{{ speakers.length > 1 ? "s" : "" }}
                   </p>
                   <div class="w-full grid grid-cols-1 md:grid-cols-2 mt-2 gap-y-3">
                     <div

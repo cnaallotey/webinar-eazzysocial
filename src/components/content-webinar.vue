@@ -61,23 +61,24 @@ const submitForm = async (x) => {
                 )
               }}
             </p>
-            <p class="text-base font-normal text-gray-700 leading-6 mt-5 max-w-2xl">
-              {{ webinar["details-2"] }}
-            </p>
+            <div
+              class="text-base font-normal text-gray-700 leading-6 mt-5 max-w-2xl space-y-2 details"
+              v-html="webinar['details-3']"
+            ></div>
             <div class="mt-10">
               <h2
                 class="text-2xl font-bold leading-7 text-left text-gray-900 sm:text-3xl sm:tracking-tight sm:truncate mt-20"
               >
-                Things you will learn
+                What you will learn
               </h2>
               <div
-                class="mt-5 flex items-center space-x-2"
+                class="mt-5 flex items-start space-x-2"
                 v-for="point in props.points"
                 :key="point.id"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-8 w-8 text-green-500"
+                  class="h-8 w-8 text-green-500 shrink-0"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
@@ -87,12 +88,14 @@ const submitForm = async (x) => {
                     clip-rule="evenodd"
                   />
                 </svg>
-                <p class="text-xl font-semibold text-gray-900">{{ point.name }}</p>
+                <p class="text-base font-normal text-gray-700 max-w-lg leading-5">
+                  {{ point["what-you-ll-learn"] }}
+                </p>
               </div>
             </div>
           </div>
           <div
-            class="w-fill col-span-3 lg:col-span-1 border border-gray-200 order-2 lg:order-2"
+            class="w-full h-fit col-span-3 lg:col-span-1 border border-gray-200 order-2 lg:order-2"
           >
             <div class="w-full p-4 bg-blue-900">
               <p class="text-xl font-bold text-white leading-6 text-center">
@@ -191,3 +194,12 @@ const submitForm = async (x) => {
     </div>
   </div>
 </template>
+
+<style scoped>
+.details ::v-deep(ol) {
+  @apply list-disc pl-5;
+}
+.details ::v-deep(ul) {
+  @apply list-disc pl-5;
+}
+</style>

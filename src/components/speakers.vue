@@ -5,14 +5,14 @@
         <h2
           class="text-2xl font-bold leading-7 text-center text-gray-900 sm:text-3xl sm:tracking-tight sm:truncate mt-20"
         >
-          Our speaker{{ props.speakers.length > 0 ? "s" : "" }}
+          Our speaker{{ props.speakers.length > 1 ? "s" : "" }}
         </h2>
         <p class="mb-10 text-base max-w-md mx-auto text-center text-gray-600">
-          Know more about the Speakers
+          Know more about the Speaker{{ props.speakers.length > 1 ? "s" : "" }}
         </p>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10">
           <div
-            class="w-full place-content-center lg:place-content-start col-span-2 md:col-span-1 p-7"
+            class="w-full place-content-center lg:place-content-start col-span-2 md:col-span-1 md:p-7"
             v-for="speaker in props.speakers"
             :key="speaker.id"
           >

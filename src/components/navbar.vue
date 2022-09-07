@@ -256,7 +256,7 @@
                   <a href="https://eazzysocial.com/courses">Courses</a>
 
                   <a href="https://eazzysocial.com/campusclub">Campus Club</a>
-                  <a to="/GetHired">Get Hired</a>
+                  <a href="https://eazzysocial.com/GetHired">Get Hired</a>
 
                   <div>
                     <div class="w-full">
@@ -347,7 +347,6 @@ export default {
       navmenu: false,
       navmenu2: false,
       resmenu: false,
-     
     };
   },
   methods: {

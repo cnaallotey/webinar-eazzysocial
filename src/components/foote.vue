@@ -25,12 +25,12 @@
                 >Courses</a
               >
               <a
-                href="https://eazzysocial.com//about"
+                href="https://eazzysocial.com/about"
                 class="hover:text-blue-500 hover:font-semibold"
                 >About</a
               >
               <a
-                href="https://eazzysocial.com//contact"
+                href="https://eazzysocial.com/contact"
                 class="hover:text-blue-500 hover:font-semibold"
                 >Contact</a
               >
