@@ -1,10 +1,24 @@
 <script setup>
 import moment from "moment";
+import { onMounted, ref } from "vue";
+
+
+import axios from 'axios'
 
 const props = defineProps({
   webinar: Object,
   speakers: Array,
 });
+
+const loc = ref('')
+
+const url = "https://ipinfo.io/41.139.47.35?token=456c7ad621116e"
+onMounted(async() => {
+  const res = await axios.get(url)
+  //console.log(res.data)
+  loc.value = res.data.country
+  
+})
 </script>
 
 <template>
@@ -39,13 +53,18 @@ const props = defineProps({
                         moment(webinar["date-and-timeof-webinar"]).format(
                           "MMMM Do YYYY, h:mm:ss a"
                         )
-                      }}
+                      }} GMT
                     </p>
                   </div>
-                  <p
+                  <p v-if="loc=='GH'"
                     class="py-1 my-2 px-3 text-lg font-semibold w-fit bg-rose-600 text-white mx-auto lg:mx-0"
                   >
                     {{ webinar.price }}
+                  </p>
+                  <p v-else
+                    class="py-1 my-2 px-3 text-lg font-semibold w-fit bg-rose-600 text-white mx-auto lg:mx-0"
+                  >
+                    {{ webinar['price-dollars']}}
                   </p>
                   <p class="text-base font-semibold text-white leading-5 mt-3">
                     Speaker{{ speakers.length > 1 ? "s" : "" }}

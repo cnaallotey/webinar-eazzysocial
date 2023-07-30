@@ -8,7 +8,7 @@ const path = require('path')
 const app = express()
 
 //using cors
-var allowedOrigins = ['http://localhost:3003','http://eazzysocial.blog', 'https://eazzysocial.blog', 'http://blog.eazzysocial.com', 'http://www.eazzysocial.com', 'http://eazzysocial.com', 'http://www.eazzysocial.blog', 'http://webinar.eazzysocial.com', 'https://webinar.eazzysocial.com' ];
+var allowedOrigins = ['http://localhost:3003','http://eazzysocial.blog', 'https://eazzysocial.blog', 'http://blog.eazzysocial.com', 'http://www.eazzysocial.com', 'http://eazzysocial.com', 'http://www.eazzysocial.blog', 'http://webinar.eazzysocial.com', 'https://webinar.eazzysocial.com', 'http://localhost:3000' ];
 
 app.use(cors(
 
