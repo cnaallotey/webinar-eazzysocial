@@ -42,7 +42,7 @@ const loaded = reactive({ webinar: false, details: false, points: false });
 
 onMounted(() => {
   axios
-    .get("http://localhost:3005/webinar_details", {
+    .get("http://webinar-api.eazzysocial.blog/webinar_details", {
       Headers: {
         "Content-Type": "application/json",
       },
@@ -54,7 +54,7 @@ onMounted(() => {
     });
 
   axios
-    .get("http://localhost:3005/speakers", {
+    .get("http://webinar-api.eazzysocial.blog/speakers", {
       Headers: {
         "Content-Type": "application/json",
       },
@@ -65,7 +65,7 @@ onMounted(() => {
       //console.log(webinar.speakers);
     });
   axios
-    .get("http://localhost:3005/points", {
+    .get("http://webinar-api.eazzysocial.blog/points", {
       Headers: {
         "Content-Type": "application/json",
       },
